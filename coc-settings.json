@@ -1,4 +1,22 @@
 {
-	"html.autoClosingTags": true,
-	"html.format.indentInnerHtml": true
+    "coc.preferences.formatOnSaveFiletypes": [
+        "html",
+        "css",
+        "py",
+        "c",
+        "h",
+        "cpp",
+        "json"
+    ],
+    "prettier.tabWidth": 4,
+
+    "html.autoClosingTags": true,
+    "html.format.indentInnerHtml": true,
+
+    "explorer.icon.enableNerdfont": true,
+    "explorer.width": 40,
+    "explorer.keyMappings.global": {
+        "v": "open:vsplit",
+        "t": "open:tab"
+    }
 }

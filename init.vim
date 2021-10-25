@@ -18,7 +18,7 @@
 call plug#begin('~/AppData/Local/nvim/plugged')
 
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-Plug 'https://github.com/preservim/nerdtree' " NerdTree
+" Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim
@@ -38,9 +38,11 @@ call plug#end()
 
 
 
-:nnoremap <C-f> :NERDTreeFocus<CR>
-:nnoremap <C-n> :NERDTree<CR>
-:nnoremap <C-t> :NERDTreeToggle<CR>
+":nnoremap <C-f> :NERDTreeFocus<CR>
+":nnoremap <C-n> :NERDTree<CR>
+":nnoremap <C-t> :NERDTreeToggle<CR>
+
+:nnoremap <C-e> <Cmd>CocCommand explorer<CR>
 :nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 
 :nmap <F8> :TagbarToggle<CR>
@@ -51,4 +53,12 @@ call plug#end()
 
 :let g:NERDTreeDirArrowExpandable="+"
 :let g:NERDTreeDirArrowCollapsible="~"
-"let g:coc_node_path = "C:/Program Files/nodejs/node.exe"
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
